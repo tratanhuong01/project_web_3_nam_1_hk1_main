@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giày Thể Thao Nữ</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="images/images.ico"/>
+	<link rel="stylesheet" type="text/css" href="css\style-sanpham.css">
+	<link rel="stylesheet" type="text/css" href="css\style-modal.css">
+	<link rel="stylesheet" type="text/css" href="css/loginandsignup.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.11.2-web\css\all.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css\responsive-sp.css">
+</head>
+<body>
+	<div id="full-modal-login">
+		<div id="modal-login">
+			<div class="modal-login-1">
+				<img src="images/icon/login.png" alt="">
+			</div>
+			<div class="modal-login-2">
+				<form name="myForm" action="" onsubmit="return checkForm()" method="get" id="formdangnhap">
+					<div class="modal-login-a">
+						<p>Tên Đăng Nhập</p>
+						<input type="text" name="name" id="name-login" value="" placeholder="Tên Tài Khoản"><br>
+						<span id="namefail"></span>
+						<p>Mật Khẩu</p>
+						<input type="password" name="password" id="pass-login" placeholder="Mật Khẩu" value="">
+						<span id="passfail"></span>
+					</div>
+					<button id="login-submit" onsubmit="form()">Đăng Nhập</button> <br>
+					<input type="checkbox" name="remember_me" id=""> Lưu Mật Khẩu
+					<p style="text-align: center;margin: 1em;">Nếu Chưa Có Tài Khoản Đăng Kí <a href="">Tại Đây</a></p>
+					<hr>
+					<div class="modal-login-3">
+						<div class="modal-login-3a">
+							<div class="modal-login-3aa" onclick="closeLogin()">Cancel</div>
+						</div>
+						<div class="modal-login-3b">
+							<p><a href="">Quên Mật Khẩu</a></p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<span onclick="closeLogin()" id="close-modal-login">&times;</span>
+		</div>
+	</div>
+		<div id="product-bought">
+		<div id="added">
+			<form action="startpay.html">
+			<p><b><i class="fas fa-check"></i>&nbsp;&nbsp;Sản Phẩm Vừa Được Thêm Vào Giỏ Hàng</b></p>
+			<hr>
+			<div class="added-one">
+				<div class="added-one-one">
+					<a href=""><img src="images/images-product/100.png"></a>
+				</div>
+				<div class="added-one-two">
+					<p>#000000</p>
+					<p><b style="color: red;">299.000đ</b></p>
+					<p>40</p>
+				</div>
+			</div>
+			<hr>
+			<p><i class="fas fa-chevron-right"></i>&nbsp;Giỏ Hàng Hiện Có <span>(20)</span>Sản Phẩm</p>
+			<button id="start-paid">Tiến Hành Thanh Toán &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button>
+			<i onclick="CloseGioHang()" id="close-added" class="fas fa-times-circle"></i>
+		</form>
+		</div>
+	</div>
+	<!--Mess Liên Hệ-->
+	<div id="fullmess">
+		<div id="mess">
+			<div id="mess1">
+				<div style="display: flex;padding: 1.5em 0em;">
+					<div id="mess1a"><b>Tư Vấn Trực Tuyến</b></div>
+					<div id="mess1b"><i class="fas fa-bars"></i> <i onclick="stopChat()" class="far fa-times-circle"></i></div>
+				</div>
+				<p id="mess1c">Nhân viên Halink hiện đang online và sẵn sàng tư vấn, hãy nhập nội dung để bắt đầu trò chuyện.</p>
+			</div>
+			<div id="mess2">
+				<div id="mess2a">
+					<div><img src="images/tongdaivien.png"></div>
+					<div>
+						<div style="display:flex">
+							<div id="text-mess">Em có thể giúp gì được cho anh chị ạ?</div>
+							<div style="padding: 4px 10px;font-size: 25px;color: dimgray;"><i class="far fa-smile-beam"></i></div>
+						</div>
+					</div>
+				</div>
+				<div id="mess2a1">
+					<div style="display:flex">
+						<div>
+							<img src="images/tongdaivien.png">
+						</div>
+						<div id="wave">
+							<span class="dot"></span>
+							<span class="dot"></span>
+							<span class="dot"></span>
+						</div>
+					</div>
+					<div style="font-size: 12px;padding-left: 3.3em;">
+							<b>Mr. Huong</b>
+					</div>
+				</div>
+			</div>
+			<hr style="margin-bottom: 0;">
+			<div id="place-writing">
+				<input type="text" placeholder="Gõ vào đây và nhấn Enter...">
+				<div id="place-writing1">
+					<i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;<i class="fas fa-paperclip"></i>&nbsp;&nbsp;<i class="far fa-smile"></i>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--Hộp Thoại Tư Vấn-->
+	<div id="modal-contact-one">
+		<img id="tongdai" src="images/tongdaivien.png"><br>
+		<button id="buttonContactone" onclick="openModalContact()" type="button"><i class="fas fa-circle"></i>&nbsp;&nbsp;Tư Vấn Trực Tuyến&nbsp;&nbsp;<span>(1)</span></button>
+		<span id="close-contact"><i id="alway-close" onclick="closeImages()" class="far fa-times-circle"></i></span>
+	</div>
+	<div id="full-modal-contact-two">
+		<div id="modal-contact-two">
+			<div id="modal-contact-two1">
+				<span id="close-contact1"><i id="alway-close1" onclick="closeImages1()" class="far fa-times-circle"></i></span>
+				<p>Tư Vấn Trực Tuyến</p>
+				<p>Để tiện tư vấn anh chị cho em xin thông tin sau đây ạ</p>
+			</div>
+			<div id="modal-contact-two2">
+				<div id="form-contact-modal">
+					<input id="inputchat1" class="input-modal-contact" type="text" placeholder="Tên"><i id="warn1" class="fas fa-exclamation-triangle"></i><br>
+					<input id="inputchat2"  class="input-modal-contact" type="text" placeholder="Điện Thoại"><i id="warn2" class="fas fa-exclamation-triangle"></i>
+					<div id="button-modal-contact">
+						<button id="button-modal-contact1">Hủy Bỏ</button>
+						<button onclick="startChat()" id="button-modal-contact2">Bắt Đầu Trò Chuyện</button>
+					</div>
+				</div>
+				<div style="text-align: center;width: 100%;font-size: 10px;padding: 0em 0em 1em 0em;color:darkblue;"><u><b>www.huongvlogs.com.vn</b></u></div>
+			</div>
+		</div>
+	</div>
+	<!--Hộp Thoại Tư Vấn-->
+	<!-- Back To Top -->
+	<i onclick="topFunction()" id="back-to-top" class="fas fa-arrow-circle-up"></i>
+	<!-- Back To Top -->
+	<!--Modal-->
+	<i id="loading-product" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+	<div id="modalsp">
+			<div id="container-product">
+				<div id="turn-off-modal">
+					<button onclick="closeModal()">x</button>
+				</div>
+				<div class="product-left11">
+					<img id="changePicture" src="images/images-product/1h.PNG">
+				</div>
+				<div class="product-center-one">
+					<img onclick="changePic1()" src="images/images-product/1h.PNG">
+					<img onclick="changePic2()" src="images/images-product/101.png">
+					<img onclick="changePic3()" src="images/images-product/102.PNG">
+					<img onclick="changePic4()" src="images/images-product/103.PNG">
+				</div>
+				<div class="product-center-two">
+					<h3>#000000</h3>
+					<div style="display: flex;width: 100%;height: 40px;line-height: 40px;">
+						<div id="ngang1">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>	
+						<div id="thuonghieu">
+							<b style="font-size: 20px;">Thương Hiệu : <b style="color: red;">VEILISR</b></b>
+						</div>     
+					</div>
+					<p style="color: red;font-size: 20px;margin: 0;padding: 16px 0px;">299.000đ&nbsp;&nbsp;&nbsp; <strike style="font-size: 12px;color: rgb(34, 32, 32);">320.000đ</strike></p>
+					<i>Mô tả đang cập nhật</i>
+					<hr>
+					<p><b>Kích Thước</b></p>
+					<div class="size-product">
+						<button type="button" data="size39">39</button>
+						<button type="button" data="size40">40</button>
+						<button type="button" data="size41">41</button>
+					</div>
+					<p><b>Số Lượng</b></p>
+					<div id="number-product-main" >
+						<div class="number-product-left11">
+								<button onclick="giamSoLuong()" id="tang" type="button">--</button>
+								<input id="dulieu" type="text" value="1">
+								<button onclick="tangSoLuong()" id="giam" type="button">+</button>
+						</div>
+						<div class="number-product-right11">
+							<button onclick="addCart()" type="button">Thêm vào giỏ hàng</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Modal-->
+	<div id="web">
+		<div id="header-web">
+				<div class="menu-hide-home">
+					<i onclick="openMenu()" class="fa fa-bars" aria-hidden="true"></i>
+				</div>
+					<div id="logo">
+						<a href="trangchu.html"><img src="images/logo.png"></a>
+					</div>
+					<div id="menu">
+						<ul>
+							<li>
+								<a href="trangchu.html">Trang Chủ</a>
+							</li>
+							<li>
+								<a href="sanpham.html">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+								<ul class="sub-menu">
+									<li><a href="giaynu.html">Giày Nữ</a>
+										<ul class="sub-menu1">
+											<li><a href="giaycaogot.html">Giày Cao Gót</a></li>
+											<li><a href="giaydethap.html">Giày Đế Thấp</a></li>
+											<li><a href="giaybupbe.html">Giày Búp Bê</a></li>
+											<li><a href="giaythethaonu.html">Giày Thể Thao Nữ</a></li>
+										</ul>
+									</li>
+									
+									<li><a href="giaynam.html">Giày Nam</a>
+										<ul class="sub-menu1">
+											<li><a href="giaytay.html">Giày Tây</a></li>
+											<li><a href="giaycocaonam">Giày Cổ Cao Nam</a></li>
+										</ul>
+									</li>
+									<li><a href="giaydabong.html">Giày Bóng Đá</a></li>
+									<li><a href="giaytreem.html">Giày Trẻ Em</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="tintuc.html">Tin Tức</a>
+							</li>
+							<li>
+								<a href="gioithieu.html">Giới Thiệu</a>
+							</li>
+							<li>
+								<a href="lienhe.html">Liên Hệ</a>
+							</li>
+						</ul>
+						<b id="dong-menu" onclick="closeMenu()">Đóng</b>
+					</div>
+					<div id="search-header">
+						<input type="text" name="text" placeholder="Nhập sản phẩm bạn muốn tìm.."><button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>	
+					</div>
+					<div id="header-right">
+						<div id="circleuser">
+							<a href=""><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+						</div>
+						<div id="loginandsign">
+							<b id="blogin" ondblclick="openLogin()" onclick="openLogin1()">Đăng Nhập<br></b>
+							<b id="bsignup" ondblclick="openSignup()" onclick="openSignup1()">Đăng Kí</b>
+						</div>
+						<div id="cart">
+							<a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+							<span id="number-cart">0</span>
+							<div id="hover-product-added">
+									<div id="hover-product-added-one">
+										<div id="not-have">
+											KHÔNG CÓ SẢN PHẨM NÀO
+										</div>
+										<div id="hover-product-frist-full">
+											<div id="hover-product-frist">
+												<div class="hover-product-added-a">
+													<img src="images/images-product/100.png">
+												</div>
+												<div class="hover-product-added-b">
+													<p><a href="">#000000 - Size 40</a></p>
+													<p>Giá : 299.000đ</p>
+												</div>
+												<div class="close-hover-product">
+													<i onclick="closeAll(this)" id="size-close" class="far fa-times-circle"></i>
+												</div>
+											</div>
+										</div>
+										<div id="to-added-on">
+										</div>
+									</div>
+									<hr style="margin: 0;">
+									<div id="hover-product-added-two">
+										<div style="text-align: left;width: 50%;">
+											<b style="font-size: 20px;">Tổng</b>
+										</div>
+										<div style="text-align: right;width: 50%;">
+											<span style="font-size: 20px;">0đ</span>
+										</div>
+									</div>
+									<hr style="margin: 0;">
+									<div id="button-hover-add">
+										<button>Giỏ Hàng</button>
+										<button>Thanh Toán</button>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		<div id="input-responsive">
+				<input type="text" name="text" placeholder="Tìm Kiếm">
+		</div>
+		<div id="frist-content">
+			<div id="informyweb"><a href="trangchu.html">Trang Chủ</a>&nbsp;<b><i class="fa fa-angle-right" aria-hidden="true"></i></b>&nbsp;<a href="gioithieu.html">Tất Cả Sản Phẩm</a></div>
+		</div>
+		<div class="wrapper">
+			<div id="head-product">
+				<h4>TẤT CẢ SẢN PHẨM</h4>
+			</div>
+			<div class="all-product">
+				<div class="filter-product">
+					<div style="padding: 0px 0px 20px 0px;"><b>Bộ Lọc Sản Phẩm</b></div>
+					<div class="head-name-product">
+						<b>THƯƠNG HIỆU</b>
+					</div>
+					<div class="types-product-left">
+							<ul>
+								<li><input type="checkbox" name="checkbox"> Adidas</li>
+								<li><input type="checkbox" name="checkbox"> Hapu</li>
+								<li><input type="checkbox" name="checkbox"> Hura</li>
+								<li><input type="checkbox" name="checkbox"> Korean</li>
+								<li><input type="checkbox" name="checkbox"> Mira</li>
+								<li><input type="checkbox" name="checkbox"> Nike</li>
+								<li><input type="checkbox" name="checkbox"> Thái Lan</li>
+								<li><input type="checkbox" name="checkbox"> VEILISR</li>
+								<li><input type="checkbox" name="checkbox"> Việt Nam</li>
+							</ul>
+					</div>
+					<div class="head-name-product">
+						<b>LOẠI</b>
+					</div>
+					<div class="types-product-left">
+						<ul>
+							<li><input type="checkbox" name="checkbox"> Giày Cổ Cao</li>
+							<li><input type="checkbox" name="checkbox"> Giày Cổ Thấp</li>
+							<li><input type="checkbox" name="checkbox"> Giày Đá Bóng</li>
+							<li><input type="checkbox" name="checkbox"> Giày Tăng Chiều Cao</li>
+							<li><input type="checkbox" name="checkbox"> Mira</li>
+							<li><input type="checkbox" name="checkbox"> Giày Vải</li>
+							<li><input type="checkbox" name="checkbox"> Slip-on</li>
+							<li><input type="checkbox" name="checkbox"> Sneaker</li>
+							<li><input type="checkbox" name="checkbox"> Ultra boots</li>
+						</ul>
+					</div>
+					<div class="head-name-product">
+						<b>MÀU SẮC</b>
+					</div>
+					<div class="types-product-left">
+						<ul>
+							<li><input type="checkbox" name="checkbox"> Vàng</li>
+							<li><input type="checkbox" name="checkbox"> Tím</li>
+							<li><input type="checkbox" name="checkbox"> Đỏ</li>
+							<li><input type="checkbox" name="checkbox"> Xanh</li>
+							<li><input type="checkbox" name="checkbox"> Hồng</li>
+							<li><input type="checkbox" name="checkbox"> Cam</li>					
+						</ul>
+					</div>
+					<div class="head-name-product">
+						<b>Mức Giá</b>
+					</div>
+					<div class="types-product-left">
+						<ul>
+							<li><input type="checkbox" name="checkbox"> Dưới 100.000đ</li>
+							<li><input type="checkbox" name="checkbox"> 100.000đ-200.000đ</li>
+							<li><input type="checkbox" name="checkbox"> 200.000đ-300.000đ</li>
+							<li><input type="checkbox" name="checkbox"> 300.000đ-500.000đ</li>
+							<li><input type="checkbox" name="checkbox"> 500.000đ-1.000.000đ</li>
+							<li><input type="checkbox" name="checkbox"> Trên 1.000.000đ</li>							
+						</ul>
+					</div>
+					<div class="head-name-product">
+						<b>KÍCH CỠ</b>
+					</div>
+					<div class="types-product-left">
+						<ul>
+							<li><input type="checkbox" name="checkbox"> Size 35</li>
+							<li><input type="checkbox" name="checkbox"> Size 36</li>
+							<li><input type="checkbox" name="checkbox"> Size 38</li>
+							<li><input type="checkbox" name="checkbox"> Size 39</li>
+							<li><input type="checkbox" name="checkbox"> Size 40</li>
+							<li><input type="checkbox" name="checkbox"> Size 41</li>
+							<li><input type="checkbox" name="checkbox"> Size 42</li>
+							<li><input type="checkbox" name="checkbox"> Size 43</li>
+							<li><input type="checkbox" name="checkbox"> Size 44</li>
+						</ul>
+					</div>
+				</div>
+				<div class="right-product">
+					<div id="loctimsp">
+						<ul style="padding: 0px 0px 20px 0px;border-bottom: 1px solid #ccc;">
+							<li><b>Ưu tiên xem</b></li>
+							<li><input type="radio" name="sanpham" value="hangmoive"> Hàng Mới về</li>
+							<li><input type="radio" name="sanpham" value="hangcunhat"> Hàng Cũ Nhất</li>
+							<li><input type="radio" name="sanpham" value="giatangdan"> Giá Tăng Dần</li>
+							<li><input type="radio" name="sanpham" value="giagiamdan"> Giá Giảm Dần</li>
+						</ul>
+					</div>
+					<div class="product">
+						<div class="name-product">
+							<a href="#"><img src="images/full-product/1.jpg"><br></a>
+							<div class="view-modal-product">
+								<button onclick="openModal()" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000001</b></a><br>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button onclick="window.location.href = 'detail-product.html'"type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/full-product/7.jpg"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000002</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button onclick="window.location.href = 'detail-product.html'"type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/full-product/2.jpg"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000003</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button onclick="window.location.href = 'detail-product.html'"type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/full-product/4.jpg"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000004</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div> 
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1e.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000005</b></a><br>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/full-product/6.jpg"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000006</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1g.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000007</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1h.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000008</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div> 
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1j.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000009</b></a><br>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1k.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000010</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1m.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000011</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1n.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000012</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div> 
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1p.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000013</b></a><br>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1l.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000014</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1o.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000015</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1t.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000016</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div> >
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1x.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000017</b></a><br>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1v.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000018</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1z.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000019</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div>
+						<div class="name-product">
+							<a href="#"><img src="images/images-product/1t.png"><br></a>
+							<div class="view-modal-product">
+								<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</div>
+							<a href="#"><b>Giày #000020</b></a>
+							<div class="cost" style="font-size: 12px;">
+								<b>Giá : 299.000đ</b>&nbsp;&nbsp;&nbsp;<strike>320.000đ</strike>
+							</div>
+							<div class="buy-now">
+								<button type="submit">Mua Ngay</button>
+							</div>
+						</div> 
+					</div>
+			</div>
+		</div>
+		<div style="padding: 40px;"><h3>CÓ THỂ BẠN THÍCH</h3></div>
+		<div class="canyoulike">
+			<div class="name-product">
+				<a href="#"><img src="images/images-product/15.1.png"><br></a>
+				<div class="view-modal-product">
+					<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+				<a href="#"><b>Giày #000021</b></a><br>
+				<div class="cost" style="font-size: 12px;">
+					<b>Giá : 490.000đ</b>
+				</div>
+				<div class="buy-now">
+					<button type="submit">Mua Ngay</button>
+				</div>
+			</div>
+			<div class="name-product">
+				<a href="#"><img src="images/images-product/16.1.png"><br></a>
+				<div class="view-modal-product">
+					<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+				<a href="#"><b>Giày #000022</b></a>
+				<div class="cost" style="font-size: 12px;">
+					<b>Giá : 520.000đ</b>&nbsp;&nbsp;&nbsp;<strike>720.000đ</strike>
+				</div>
+				<div class="buy-now">
+					<button type="submit">Mua Ngay</button>
+				</div>
+			</div>
+			<div class="name-product">
+				<a href="#"><img src="images/images-product/17.1.png"><br></a>
+				<div class="view-modal-product">
+					<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+				<a href="#"><b>Giày #000023</b></a>
+				<div class="cost" class="cost" style="font-size: 12px;">
+					<b>Giá : 1.200.000đ</b>&nbsp;&nbsp;&nbsp;<strike>1.320.000đ</strike>
+				</div>
+				<div class="buy-now">
+					<button type="submit">Mua Ngay</button>
+				</div>
+			</div>
+			<div class="name-product">
+				<a href="#"><img src="images/images-product/18.1.png"><br></a>
+				<div class="view-modal-product">
+					<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+				<a href="#"><b>Giày #000024</b></a>
+				<div class="cost" style="font-size: 12px;">
+					<b>Giá : 229.000đ</b>&nbsp;&nbsp;&nbsp;<strike>240.000đ</strike>
+				</div>
+				<div class="buy-now">
+					<button type="submit">Mua Ngay</button>
+				</div>
+			</div>
+			<div class="name-product">
+				<a href="#"><img src="images/images-product/110.png"><br></a>
+				<div class="view-modal-product">
+					<button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+				<a href="#"><b>Giày #000025</b></a>
+				<div class="cost" style="font-size: 12px;">
+					<b>Giá : 160.000đ</b>&nbsp;&nbsp;&nbsp;<strike>180.000đ</strike>
+				</div>
+				<div class="buy-now">
+					<button type="submit">Mua Ngay</button>
+				</div>
+			</div>
+		</div>
+		<div id="title-product">
+			<h2>THƯƠNG HIỆU NỔI TIẾNG</h2>
+			<h6>Chúng tôi luôn đem đến khách hàng những thương hiệu hàng đầu thế giới</h6>
+		</div>
+		<div class="near-footer">
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/1.png"></a>
+			</div>
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/2.png"></a>
+			</div>
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/3.png"></a>
+			</div>
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/4.png"></a>
+			</div>
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/5.png"></a>
+			</div>
+			<div class="fashion-star">
+				<a href="#"><img src="images/images-fashion/6.png"></a>
+			</div>
+		</div>
+	</div>
+	<hr style="border: 0.5px solid #ccc;margin: 0;padding: 0;margin-bottom: 50px;">
+	<div id="footer">
+		<div class="left">
+			<div class="heading"><b>VỀ CHÚNG TÔI</b></div>
+			<div style="padding-bottom: 20px;">Huong Vlog là một cửa hàng và là một website thuộc &nbsp;sở hửu của Mr. Huong với vai trò là một nhà &nbsp;cung cấp đồng&nbsp; là&nbsp; cha &nbsp;đẻ của&nbsp; website và cửa hàng&nbsp; đó. Chuyên&nbsp; cung cấp &nbsp;các &nbsp;loại&nbsp; phụ&nbsp; kiện thời trang đặc biệt là&nbsp; giày dép cho &nbsp;tất cả các bạn trên khắp cả nước và cả thế giới</div>
+			<div>&nbsp;<i class="fas fa-map-marker-alt"></i></i>&nbsp;&nbsp;&nbsp;<i>Thăng Bình , Quảng Nam</i></div>  
+			<div><i class="far fa-envelope-open"></i>&nbsp;&nbsp;<i>Tratanhuong01@gmail.com</i></div>
+			<div><i class="fas fa-phone"></i></i>&nbsp;&nbsp;<i>0354114665</i></div>
+		</div>
+		<div class="middle">
+			<div class="heading"><a href="#"><b>THÔNG TIN</b></a></div>
+			<div><a href="#"><i>Trang Chủ</i></a></div>
+			<div><a href="#"><i>Sản Phẩm</i></a></div>
+			<div><a href="#"><i>Tin Tức</i></a></div>
+			<div><a href="#"><i>Giới Thiệu</i></a></div>
+			<div><a href="#"><i>Liên Hệ</i></a></div>
+		</div>
+		<div class="right">
+			<div class="heading"><a href="#"><b>THÔNG TIN</b></a></div>
+			<div><a href="#"><i>Trang Chủ</i></a></div>
+			<div><a href="#"><i>Sản Phẩm</i></a></div>
+			<div><a href="#"><i>Tin Tức</i></a></div>
+			<div><a href="#"><i>Giới Thiệu</i></a></div>
+			<div><a href="#"><i>Liên Hệ</i></a></div>
+		</div>
+		<div class="right-end">
+			<div class="heading"><b>DỊCH VỤ KHÁCH HÀNG</b></div>
+			<div>Gửi email đăng kí để nhận thông báo mới nhất về khuyến mãi, sự kiện nổi bật dành cho khách hàng</div>
+			<div id="footer-search">
+				<input type="text" name="text" placeholder="Nhập email"><button type="submit"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; GỬI NGAY</button>
+			</div>
+			<div style="margin: 10px;">
+				<a href="#"><img src="images/payment-footer.png"></a>
+			</div>
+			<div>
+				<b>&copy;&nbsp;&nbsp;Bản quyền thuộc về Trà Hưởng <br>Cung cấp bởi Huong</b>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/javascript-sanpham.js"></script>
+	<script src="js/process-form.js"></script>
+</body>
+</html>

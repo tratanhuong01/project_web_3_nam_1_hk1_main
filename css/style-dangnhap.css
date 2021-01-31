@@ -1,0 +1,309 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: serif;
+	scroll-behavior: smooth;
+}
+.wrapper {
+	width: 80%;
+	margin: auto;
+}
+#web {
+	width: 100%;
+	margin: 0 auto;
+}
+#header-web {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	line-height: 100px;
+}
+#logo {
+	width: 15%;
+	height: 100px;
+}
+#logo img {
+	width: 100%;
+	height: 80%;
+	object-fit: contain;
+	padding-left: 70px;
+}
+#menu {
+	width: 40%;
+	padding-left: 75px;
+	line-height: normal;
+	margin: 42px 0px;
+}
+#menu ul {
+	width: 100%;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+}
+#menu ul li {
+	width: 20%;
+	position: relative;
+	text-align: center;
+}
+#menu ul li a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	display: block;
+}
+#menu ul li a:hover {
+	color: #1E9E74;
+}
+#menu ul li > .sub-menu {
+	flex-direction: column-reverse;
+	list-style-type: none;
+	display: none;
+}
+.sub-menu {
+	width: 141px;
+	position: absolute;
+	top: 70px;
+	line-height: normal;
+	text-align: left;
+}
+.sub-menu li {
+	padding: 8px 4px !important;
+}
+#menu ul li ul.sub-menu li .sub-menu1 {
+	position: absolute;
+	top: 0;
+	left: 142px;
+	flex-direction:column;
+	background-color:white;
+	border-radius: 10px;
+	width:150px;
+	display: none;
+}
+#menu ul li ul.sub-menu li {
+	flex-direction: column-reverse;
+}
+#menu ul li ul.sub-menu li:hover > .sub-menu1{
+	display: block;
+	background-color: #F3A1B7;
+}
+#menu ul li:hover .sub-menu {
+	position: absolute;
+	top: 19px;
+	display: block;
+	border-radius: 10px;
+	background-color: #F3A1B7;
+	width: 150px;
+}
+#menu ul li .sub-menu li a {
+	width:150px;
+	text-align: left;
+	display: block;
+}
+#search-header {
+	width: 25%;
+	position: relative;
+}
+#search-header input {
+	width: 90%;
+	padding: 8px;
+	line-height: normal;
+	border: none;
+	background-color: #FDF1F3;
+}
+#search-header input:hover {
+	border: 1px solid black;
+	}
+#search-header button {
+	width: 10%;
+	border: none;
+	line-height: normal;
+	padding: 8px;
+	background-color: #FDF1F3;
+	position: absolute;
+	right: 38px;
+	top: 33px;
+}
+#header-right {
+	width: 25%;
+	display: flex;
+	line-height: normal;
+}
+#title-product {
+	margin: 2em 0em;
+}
+#title-product h2,h6 {
+	text-align: center;
+	padding-bottom: 8px;
+}
+#title-product h2,h6:hover {
+	color: #1E9E74;
+}
+#circleuser {
+	padding-left: 30px;	
+}
+#circleuser i {
+	font-size: 30px;
+	padding: 0px 20px;
+	line-height: 100px;
+	color: #1E9E74;
+}
+#loginandsign {
+	padding: 28px 0px;
+	margin-right: 60px;
+}
+#loginandsign a {
+	text-decoration: none;
+	color: black;
+}
+#loginandsign a:hover {
+	color: #1E9E74;
+}
+#cart i {
+	font-size: 40px;
+	line-height: 100px;
+	color: #1E9E74;
+}
+#frist-content {
+	width: 80%;
+	height: 50px;
+	margin: auto;
+	padding: 8px 0px;
+	background-color: rgb(230, 236, 240);
+}
+.form-login {
+	margin: 1em auto;
+	width: 50%;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.formdangki {
+	width: 85%;
+	margin: auto;
+	margin-bottom: 1em;
+}
+.formdangki input {
+	width: 90%;
+	padding: 10px 10px 10px 50px;
+	position: relative;
+}
+.formdangki i {
+	font-size: 20px;
+}
+#person-call {
+	position: absolute;
+	left: 485px;
+	top: 274px;
+}
+#person-mail {
+	position: absolute;
+	left: 486px;
+	top: 335px;
+}
+.send-pass-phone {
+	margin-bottom: 1em;
+}
+.send-pass-phone a {
+	color: #1E9E74;
+	text-decoration: none;
+}
+.send-pass-phone a:hover {
+	text-decoration: none;
+}
+.button-login {
+	width: 77%;
+	margin: auto;
+	margin-bottom: 1em;
+}
+.button-login button {
+	width: 100%;
+	padding: 12px;
+	background-color: #1E9E74;
+	border: none;
+	color: white;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#login-voi-facebook {
+	padding: 1em 0em;
+	margin: auto;
+	width: 77%;
+	border: 1px solid blue;
+	margin-bottom: 1em;
+}
+#login-voi-facebook a:hover {
+	text-decoration: none;
+}
+#login-voi-facebook i {
+	font-size: 20px;
+	color: blue;`
+}
+#login-voi-google {
+	padding: 1em 0em;
+	margin: auto;
+	width: 77%;
+	border: 1px solid red;
+	margin-bottom: 3em;
+}
+#login-voi-google a {
+	text-decoration: none;
+}
+#login-voi-google i {
+	font-size: 20px;
+	color: chartreuse;
+}
+.near-footer {
+	width: 100%;
+	display: flex;
+	margin: auto;
+	justify-content: center;
+}
+.fashion-star {
+	width: 14%;
+	padding: 8px 15px;
+}
+.fashion-star img {
+	width: 100%;
+	height: 100px;
+	object-fit: contain;
+}
+#footer {
+	width: 80%;
+	margin: auto;
+	display: flex;
+}
+#footer a i {
+	padding: 8px 0px;
+	color: black;
+}
+#footer a:hover {
+	text-decoration: none;
+	color: #1E9E74;
+}
+#footer i:hover {
+	color: #1E9E74;
+}
+.left {
+	width: 27.5%;
+	margin-right: 7%;
+}
+.middle {
+	width: 15%;
+}
+.right {
+	width: 20%;
+}
+.right-end {
+	width: 30%;
+}
+#footer-search {
+	margin: 16px 0px;
+}
+#footer-search input {
+	padding: 6px;
+}
+#footer-search button {
+	padding: 8px;
+	background-color: #1E9E74;
+	color: white;
+	border: none;
+} 
